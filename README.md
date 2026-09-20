@@ -15,10 +15,19 @@ stripping a leading `omarchy-` and trailing `-theme` — `omarchy-c64-theme`
 becomes `c64`, so `omarchy theme set c64` is what activates it either way,
 whether installed from this repo or built locally.)
 
-That alone gives you a complete, working theme: colors, icons, two
+That alone gives you a complete, working theme: colors, icons, a handful of
 wallpapers, a Neovim colorscheme pointer, and a VS Code theme pointer. The
 default wallpaper (`backgrounds/1-not-ready.png`) is a static C64 BASIC boot
-screen pointing back at this repo.
+screen pointing back at this repo. Cycle through the others with
+`omarchy theme bg next` or the background picker:
+
+- `2-crt-glow.png` — a soft radial CRT-glow gradient with faint scanlines
+- `3-10print-maze.png` — the classic `10 PRINT CHR$(205.5+RND(1));:GOTO 10`
+  one-liner, rendered as the actual generated maze pattern
+- `4-breadbin.png` — a C64 "breadbin" case, badge stripe and all, with the
+  Omarchy wordmark where COMMODORE 64 branding normally sits
+- `5-synthwave.png` — a retrowave sunset/grid scene (plus a disco ball),
+  built entirely from this theme's own palette
 
 `omarchy theme install` clones from a stranger's repo, so on principle it
 never lets an installed theme carry anything that executes code — no Lua, no
