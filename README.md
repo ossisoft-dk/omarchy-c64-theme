@@ -7,8 +7,13 @@ canonical C64 hardware colors (blue screen, light-blue text/accent, the full
 ## Install
 
 ```sh
-omarchy theme install https://github.com/ossisoft-dk/omarchy-64
+omarchy theme install https://github.com/ossisoft-dk/omarchy-c64-theme
 ```
+
+(`omarchy theme install` derives the local slug from the repo name by
+stripping a leading `omarchy-` and trailing `-theme` — `omarchy-c64-theme`
+becomes `c64`, so `omarchy theme set c64` is what activates it either way,
+whether installed from this repo or built locally.)
 
 That alone gives you a complete, working theme: colors, icons, two
 wallpapers, a Neovim colorscheme pointer, and a VS Code theme pointer. The
