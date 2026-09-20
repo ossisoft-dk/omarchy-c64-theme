@@ -81,7 +81,7 @@ trap 'rm -f "$tmp"' EXIT
 
 "$MAGICK" -size 3840x2160 xc:"#7869C4" \
   -fill "#40318D" -draw "rectangle 100,100 3739,2059" \
-  -font "$FONT" -pointsize 50 -fill "#7869C4" \
+  -font "$FONT" -pointsize 50 -fill "#B0A5E8" \
   -gravity NorthWest -annotate +260+260 "$text" \
   "$tmp" || { echo "generate-wallpaper.sh: render failed" >&2; exit 1; }
 
