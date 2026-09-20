@@ -4,6 +4,13 @@ by Damian Vila
 Verified against the upstream LICENCE file at
 https://raw.githubusercontent.com/damianvila/font-bescii/master/LICENCE
 
+Bescii-Mono-Condensed.ttf in this directory is a derivative of
+Bescii-Mono.ttf: the same glyph outlines and advance widths, uniformly
+scaled 0.606x horizontally with fontTools (https://github.com/fonttools/fonttools,
+MIT) to match JetBrainsMono's glyph width for use in fixed-width Omarchy
+shell UI panels. As a derivative of a CC0-dedicated work, it carries the
+same CC0 1.0 Universal terms below.
+
 ---
 
 Creative Commons Legal Code
