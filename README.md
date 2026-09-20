@@ -80,3 +80,8 @@ switch/restore behavior, set it directly instead of running `install.sh`:
 ```sh
 omarchy font set "Bescii Mono"
 ```
+
+## License
+
+MIT — see [LICENSE](LICENSE). The bundled font is CC0 — see
+[fonts/LICENSE.txt](fonts/LICENSE.txt).
