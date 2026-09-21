@@ -11,6 +11,17 @@ MIT) to match JetBrainsMono's glyph width for use in fixed-width Omarchy
 shell UI panels. As a derivative of a CC0-dedicated work, it carries the
 same CC0 1.0 Universal terms below.
 
+It also has every Private Use Area codepoint (U+E000-U+F8FF and the
+supplementary-plane PUA blocks) removed from its cmap. Bescii maps its own
+"pixel art for games" glyphs into that same range — including, confirmed,
+U+F026-U+F028, which several Omarchy shell bar/panel icons (e.g. the
+volume/speaker icon) use for their Nerd Font glyphs. With those codepoints
+present, Bescii's unrelated pixel art rendered instead of the real icon;
+with them removed, those codepoints correctly fall through to the next
+installed font that actually has them (JetBrainsMono Nerd Font, an Omarchy
+dependency). No ordinary text glyph (Latin, digits, punctuation, PETSCII)
+is affected — only that PUA range.
+
 ---
 
 Creative Commons Legal Code
