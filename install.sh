@@ -6,7 +6,7 @@
 #                               moment you switch away
 #
 # `omarchy theme install` only ever copies theme assets (colors, icons,
-# backgrounds...) — it deliberately never installs hooks on your behalf (a
+# backgrounds...); it deliberately never installs hooks on your behalf (a
 # theme pulled from a stranger's git repo can't be allowed to run arbitrary
 # code just by being installed). So both extras stay a separate, explicit
 # step: run this script once after installing the theme.
@@ -20,7 +20,7 @@ set -euo pipefail
 THEME_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 if ! command -v omarchy >/dev/null; then
-  echo "install.sh: 'omarchy' command not found — is this an Omarchy system?" >&2
+  echo "install.sh: 'omarchy' command not found. Is this an Omarchy system?" >&2
   exit 1
 fi
 

@@ -42,7 +42,7 @@ cpu=$(lscpu 2>/dev/null | awk -F': +' '/^Model name/{print $2; exit}' \
   | sed -E 's/\(R\)|\(TM\)|CPU //g' | xargs | tr '[:lower:]' '[:upper:]')
 [[ -z $cpu ]] && cpu="UNKNOWN CPU"
 
-# Every display/3D-capable PCI device, not just the first — a laptop with
+# Every display/3D-capable PCI device, not just the first: a laptop with
 # hybrid graphics (integrated + discrete) has two, and both should show up.
 gpu_names=()
 if command -v lspci >/dev/null; then
@@ -91,7 +91,7 @@ mv "$tmp" "$OUT"
 trap - EXIT
 
 # `omarchy theme set` stages a *copy* of backgrounds/ under
-# ~/.local/state/omarchy/current/theme/ — that staged copy, not this repo
+# ~/.local/state/omarchy/current/theme/. That staged copy, not this repo
 # path, is what's actually symlinked as the live background and what
 # `omarchy theme bg next` scans. Keep it in sync so cycling and a live
 # refresh both see the update.
@@ -103,7 +103,7 @@ if [[ -f $staged_name_file ]] && [[ "$(<"$staged_name_file")" == "$theme_slug" ]
   cp "$OUT" "$staged_bg"
 
   # omarchy-menu-images (the background picker) short-circuits its whole
-  # thumbnail rebuild on a *directory* mtime check — an in-place `cp` changes
+  # thumbnail rebuild on a *directory* mtime check. An in-place `cp` changes
   # the file's mtime but not the directory's, so the picker would otherwise
   # keep serving a stale cached thumbnail forever. Bump it explicitly.
   touch "$(dirname "$staged_bg")"
@@ -115,7 +115,7 @@ if [[ -f $staged_name_file ]] && [[ "$(<"$staged_name_file")" == "$theme_slug" ]
   #     picks a background *before* this hook ever runs, and at that moment
   #     1-ready.png may not exist yet (e.g. first activation, or it was
   #     deleted), so it can fall back to some other file in the theme by
-  #     pure alphabetical luck. That's not a choice the user made — force
+  #     pure alphabetical luck. That's not a choice the user made, so force
   #     past it so switching to this theme reliably lands on its live
   #     wallpaper. A background cycled to *after* the switch (post-boot,
   #     or just idle desktop use) still isn't touched.
@@ -126,7 +126,7 @@ if [[ -f $staged_name_file ]] && [[ "$(<"$staged_name_file")" == "$theme_slug" ]
   if [[ $already_showing == true || ${1:-} == force ]]; then
     # Plain `omarchy theme bg set` is a no-op here: Background.qml skips
     # re-rendering whenever the new path string equals the already-loaded one
-    # (a sound optimization for ordinary cycling between distinct files — it
+    # (a sound optimization for ordinary cycling between distinct files; it
     # just doesn't know *this* path's content changed underneath it). The
     # only thing that bypasses that guard is the `force` flag a real theme
     # switch sets via the themeTransition IPC call, so use that directly

@@ -2,13 +2,13 @@
 # Reverts everything install.sh did:
 #   - removes both installed hooks
 #   - restores your previous font right now, if set-font.sh had changed it
-#     (waiting for your next theme switch wouldn't work — the hook doing
+#     (waiting for your next theme switch wouldn't work: the hook doing
 #     that restore is gone the moment this script removes it)
 #   - deletes the generated live wallpaper, so the theme falls back to its
 #     static default instead of leaving a stale stats snapshot in place
 #
-# The theme itself (colors, icons, the static wallpaper) is untouched —
-# this only undoes what install.sh set up.
+# The theme itself (colors, icons, the static wallpaper) is untouched.
+# This only undoes what install.sh set up.
 set -uo pipefail
 
 THEME_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
@@ -47,7 +47,7 @@ current_bg_link="$HOME/.local/state/omarchy/current/background"
 rm -f "$THEME_DIR/backgrounds/1-ready.png" "$staged_ready"
 
 # If the live wallpaper we just deleted was the one on screen, the symlink
-# is now dangling — point it back at the theme's static default instead of
+# is now dangling, so point it back at the theme's static default instead of
 # leaving a broken background.
 fallback="$HOME/.local/state/omarchy/current/theme/backgrounds/1-not-ready.png"
 if [[ -L $current_bg_link ]] && [[ ! -e $current_bg_link ]] && [[ -f $fallback ]]; then

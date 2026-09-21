@@ -1,7 +1,7 @@
 #!/bin/bash
 # Trigger stub. `omarchy hook install` copies this file itself into
 # ~/.config/omarchy/hooks/<type>.d/, so it can't rely on a relative path back
-# to the rest of this repo — THEME_SLUG below has to match wherever the c64
+# to the rest of this repo, so THEME_SLUG below has to match wherever the c64
 # theme actually lives (edit it if you renamed the theme's folder).
 #
 # Installed twice, into two different hook types with two different calling

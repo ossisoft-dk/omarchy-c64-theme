@@ -1,4 +1,4 @@
-# Regenerated locally by hooks/generate-wallpaper.sh (install-hooks.sh) with
+# Regenerated locally by hooks/generate-wallpaper.sh (install.sh) with
 # this machine's live stats. Never commit a personal RAM/CPU/hostname
-# snapshot as the shipped default — backgrounds/1-not-ready.png is that.
+# snapshot as the shipped default: backgrounds/1-not-ready.png is that.
 backgrounds/1-ready.png

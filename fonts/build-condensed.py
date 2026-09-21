@@ -9,14 +9,14 @@ fonttools`). Run from anywhere:
 Two things done to the source font, both explained in LICENSE.txt:
 
 1. Every glyph outline and advance width scaled 0.606x horizontally, to
-   match JetBrainsMono's glyph width — Bescii Mono's glyphs render ~65%
+   match JetBrainsMono's glyph width. Bescii Mono's glyphs render ~65%
    wider than JetBrainsMono's at the same point size, which overflows the
    fixed-width column layouts some Omarchy shell panels use.
 
 2. Every Private Use Area cmap entry removed. Bescii maps its own "pixel
    art for games" glyphs into the same PUA range Nerd Font icons live in
    (confirmed collision: U+F026-U+F028, the volume/speaker icon glyphs
-   used by the Omarchy audio panel — Bescii's own art rendered there
+   used by the Omarchy audio panel; Bescii's own art rendered there
    instead of the real icon). Removing the mappings lets those codepoints
    correctly fall through to a real icon-capable font instead.
 """
@@ -65,8 +65,8 @@ def main():
                 del table.cmap[cp]
                 removed += 1
 
-    # nameID 16 ("preferred family") is what fontconfig actually keys on —
-    # it's just "Bescii" in the source, not "Bescii Mono", so a naive
+    # nameID 16 ("preferred family") is what fontconfig actually keys on.
+    # It's just "Bescii" in the source, not "Bescii Mono", so a naive
     # find-and-replace on "Bescii Mono" alone misses it and leaves a
     # collision with the original font's family alias.
     for rec in font["name"].names:
