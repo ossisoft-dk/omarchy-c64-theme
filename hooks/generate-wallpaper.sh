@@ -74,7 +74,7 @@ else
   done
 fi
 
-text=$'    **** OMARCHY 64 ****\n\n '"${ram_kb}"$'K RAM SYSTEM\n '"${avail_kb}"$' BYTES FREE\n\n '"${l_cpu}"$'\n'"${gpu_block}"$'\n '"${l_host}"$'\n '"${l_os}"$'\n\nREADY.\n\xe2\x96\x88'
+text=$'    **** OMARCHY 64 ****\n\n '"${ram_kb}"$'K RAM SYSTEM\n '"${avail_kb}"$'K BYTES FREE\n\n '"${l_cpu}"$'\n'"${gpu_block}"$'\n '"${l_host}"$'\n '"${l_os}"$'\n\nREADY.\n\xe2\x96\x88'
 
 tmp=$(mktemp --suffix=.png)
 trap 'rm -f "$tmp"' EXIT
